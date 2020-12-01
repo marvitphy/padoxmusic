@@ -17,6 +17,9 @@ app.use(express.static('public'))
 app.get('/', function(req, res) {
     res.render('Error')
 })
+app.get('/api/addGig', function(req, res) {
+    res.send('Error')
+})
 
 app.listen(port, function(error) {
     if (error) throw error
