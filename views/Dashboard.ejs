@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
-    <title>Mixtape</title>
+    <title>PΛDOX</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Mixtape template project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/assets/moon.png" type="image/x-icon">
+    <link rel="icon" href="/assets/moon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/mixtape/styles/bootstrap-4.1.2/bootstrap.min.css">
     <link href="https://preview.colorlib.com/theme/mixtape/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/mixtape/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -15,6 +17,13 @@
     <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/mixtape/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/mixtape/styles/responsive.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <style>
+        html,
+        body,
+        * {
+            scroll-behavior: smooth !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,19 +36,14 @@
                 <div class="logo">
                     <a href="https://www.instagram.com/padoxmusic" style="font-size: 700 !important; font-family: Arial, Helvetica, sans-serif !important;"><img src="/assets/logo.png" width="125px"></a>
                 </div>
-                <div class="log_reg">
-                    <ul class="d-flex flex-row align-items-start justify-content-start">
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
-                    </ul>
-                </div>
+
                 <nav class="main_nav">
                     <ul class="d-flex flex-row align-items-start justify-content-start">
                         <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="music.html">Music</a></li>
-                        <li><a href="blog.html">News</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+
+                        <li><a href="#mymusic">My Music</a></li>
+                        <li><a href="#aboutme">About me</a></li>
+
                     </ul>
                 </nav>
                 <div class="hamburger ml-auto">
@@ -87,15 +91,15 @@
 
                     <!-- Slide -->
                     <div class="owl-item">
-                        <div class="background_image" style="background-image:url(https://preview.colorlib.com/theme/mixtape/images/index.jpg)"></div>
+                        <div class="background_image" style="background-image:url(https://preview.colorlib.com/theme/mixtape/images/index.jpg); opacity: 60%;"></div>
                         <div class="home_container">
                             <div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
                                 <div class="home_content text-center">
-                                    <div class="home_subtitle">New single release</div>
+                                    <div class="home_subtitle">New Single Release</div>
                                     <div class="home_title">
-                                        <h1>Love is all around</h1>
+                                        <h1>Show Me The Way</h1>
                                     </div>
-                                    <div class="home_link"><a href="#">Listen on Soundcloud</a></div>
+                                    <div class="home_link"><a href="#">Pre-save</a></div>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +143,7 @@
 
         <!-- Featured Album -->
 
-        <div class="featured_album">
+        <div id="mymusic" class="featured_album">
             <div class="background_image featured_background" style="background-image:url(https://preview.colorlib.com/theme/mixtape/images/featured.png)"></div>
             <div class="container">
                 <div class="row">
@@ -363,12 +367,12 @@
                     </div>
 
                     <!-- Artist Content -->
-                    <div class="col-lg-7 offset-lg-1">
+                    <div id="aboutme" class="col-lg-7 offset-lg-1">
                         <div class="artist_content">
                             <div class="section_title_container">
-                                <div class="section_subtitle">Events</div>
+                                <div class="section_subtitle">Sobre mim</div>
                                 <div class="section_title">
-                                    <h1>The Artist</h1>
+                                    <h1>O artista</h1>
                                 </div>
                             </div>
                             <div class="artist_text">
