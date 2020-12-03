@@ -5,8 +5,13 @@
     <title>PΛDOX</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Mixtape template project">
+    <meta name="description" content="Padox - Website">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Padox - Website">
+    <meta property="og:description" content="Padox Music">
+    <meta property="og:image" content="/assets/moon.png">
+    <meta property="og:url" content="http://padoxmusic.com">
+
     <link rel="shortcut icon" href="/assets/moon.png" type="image/x-icon">
     <link rel="icon" href="/assets/moon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://preview.colorlib.com/theme/mixtape/styles/bootstrap-4.1.2/bootstrap.min.css">
@@ -22,6 +27,32 @@
         body,
         * {
             scroll-behavior: smooth !important;
+        }
+        
+        .image-overlay {
+            background: red !important;
+        }
+        
+        .spotify {
+            box-shadow: -10px 20px 30px black;
+            border-radius: 20px;
+            border: 4px solid white;
+            transform: translateX(-100px);
+            margin-top: 80px;
+            width: 500px;
+            height: 580px;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .spotify {
+                box-shadow: -10px 20px 30px black;
+                border-radius: 20px;
+                border: 4px solid white;
+                transform: translate(0, -80px);
+                margin-top: 0px;
+                width: 100%;
+                height: 100%;
+            }
         }
     </style>
 </head>
@@ -149,9 +180,9 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-6">
                         <div class="section_title_container">
-                            <div class="section_subtitle">Events</div>
+                            <div class="section_subtitle">My Music</div>
                             <div class="section_title">
-                                <h1>Featured Album</h1>
+                                <h1>Me ouça:</h1>
                             </div>
                         </div>
                     </div>
@@ -162,15 +193,14 @@
                     <div class="col-md-6">
                         <div class="featured_album_image">
                             <div class="image_overlay"></div>
-                            <div class="background_image" style="border-radius: 20px; background-image:url(/assets/3.webp)"></div>
+                            <div class="background_image" style="border-radius: 20px; background-image:url(/assets/3.webp);"></div>
                             <!-- <img src="images/featured_album.jpg" alt=""> -->
                         </div>
                     </div>
 
                     <!-- Featured Album Player -->
                     <div style="" class="col-md-6 featured_album_col">
-                        <iframe style="box-shadow: -10px 20px 30px black; border-radius: 20px; border: 4px solid white; transform: translateX(-100px); margin-top: 80px" src="https://open.spotify.com/embed/artist/6EIynm35fNLiEbCqFGpapj" width="500" height="580" frameborder="0"
-                            allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe class="spotify" style="" src="https://open.spotify.com/embed/artist/6EIynm35fNLiEbCqFGpapj" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </div>
 
                 </div>
