@@ -8,7 +8,7 @@ function addLink(obj) {
 }
 
 function getLinks() {
-    return knex('links')
+    return knex('links').orderBy('id', 'desc')
         .then(result => result)
         .catch(err => err)
 }
