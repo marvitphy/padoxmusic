@@ -250,7 +250,13 @@
                             <label for="">Titulo</label>
                             <input type="text" class="form-control nome"><br>
                             <label for=""> <span class="rounded p-1 bg-success text-white"><i class="fas fa-link"></i></span> &nbsp;&nbsp;URL</label>
-                            <input type="text" class="form-control url">
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">https://</span>
+                                </div>
+                                <input type="text" class="form-control url" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
@@ -444,7 +450,7 @@
             $('.add').click(function() {
 
                 let nome = $('.nome').val()
-                let url = $('.url').val()
+                let url = 'https://' + $('.url').val()
                 $('.nome').val('')
                 $('.url').val('')
                 addLink(nome, url)
