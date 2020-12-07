@@ -108,20 +108,15 @@
         }
     }
     
-    .linktree {
-        background-size: cover;
-        background-position: center;
-        -moz-box-shadow: 0px 6px 5px #111;
-        -webkit-box-shadow: 0px 6px 5px #111;
-        box-shadow: 0px 2px 10px #111;
-        border-radius: 100%;
-        background: url('/assets/4.webp');
+    .social .facebook {
+        display: inline-block;
         width: 150px;
         height: 150px;
-    }
-    
-    img {
+        background: url(/assets/4.webp);
+        background-position: 50% 50%;
+        background-size: cover;
         border-radius: 50%;
+        border: 5px solid linear-gradient(red, yellow);
     }
 </style>
 
@@ -130,7 +125,9 @@
     <div class="container">
         <div class="col-xs-12">
             <div class="text-center" style="padding-top: 30px; padding-bottom: 30px;">
-                <img src="/assets/4.webp" alt="Avatar" width="150px" height="150px">
+                <div class="social" style="" id="social1">
+                    <a class="facebook" href="https://www.facebook.com/"></a>
+                </div>
 
                 <h2 style="color: #ffffff; padding-top: 20px;">PΛDOX</h2>
             </div>
