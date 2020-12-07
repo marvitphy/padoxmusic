@@ -20,21 +20,32 @@ app.use(express.static('public'))
 app.get('/', function(req, res) {
     res.render('Dashboard')
 })
+app.get('/links', function(req, res) {
+    res.render('ViewLinks')
+})
+
+sharp('./public/assets/fotofoto.jpg')
+    .resize(1116, 774)
+    .toFile('4.webp', (err, info) => {});
+
 
 app.get('/api/getLinks', async(req, res, next) => {
     let result = await linksModel.getLinks();
     res.json(result)
 });
+app.get('/masterLinks', async(req, res, next) => {
+    res.render('Links')
+});
 
 app.post('/api/addLink', async(req, res, next) => {
-    let obj = req.query
+    let obj = req.body
     let result = await linksModel.addLink(obj);
     res.json(result)
 })
 
 app.post('/api/deleteLink', async(req, res, next) => {
 
-    let id = req.query.id
+    let id = req.body.id
     let result = await linksModel.delLink(id);
     res.json(result)
 
