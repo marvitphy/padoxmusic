@@ -26,7 +26,7 @@ app.get('/links', function(req, res) {
 
 sharp('./public/assets/fotofoto.jpg')
     .resize(1116, 774)
-    .toFile('4.webp', (err, info) => {});
+    .toFile('5.jpg', (err, info) => {});
 
 
 app.get('/api/getLinks', async(req, res, next) => {
