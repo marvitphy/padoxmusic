@@ -18,7 +18,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
-    res.render('Dashboard')
+    res.render('404')
 })
 app.get('/links', function(req, res) {
     res.render('ViewLinks')
