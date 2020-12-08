@@ -184,7 +184,6 @@
 </style>
 
 <body class="animsition">
-
     <div class="page-wrapper">
         <!-- HEADER DESKTOP-->
         <div class="text-right text-white">
@@ -192,7 +191,7 @@
                 <div class="collapse" id="navbarToggleExternalContent">
                     <div class=" p-4 text-left fundo" style="">
                         <h5 class="text-white h4 text-left">ZappaLinks</h5>
-                        <a href="" class="text-white">Sair</a>
+                        <a href="" class="logout text-white">Sair</a>
                     </div>
                 </div>
                 <nav class="navbar navbar-dark d-inline">
@@ -458,6 +457,18 @@
 
             })
 
+
+
+            if (localStorage.getItem('user') == null || localStorage.getItem('user') == 'undefined') {
+                window.location.href = 'http://' + window.location.host + '/login'
+            } else {
+
+            }
+
+            $('.logout').click(function() {
+                localStorage.removeItem("user");
+                window.location.href = 'http://' + window.location.host + '/login';
+            })
         })
     </script>
 

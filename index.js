@@ -4,6 +4,7 @@ const path = require('path')
 const app = express()
 const sharp = require('sharp');
 const linksModel = require('./models/linksModel')
+const bcrypt = require('bcrypt');
 
 
 
@@ -33,8 +34,13 @@ app.get('/api/getLinks', async(req, res, next) => {
     let result = await linksModel.getLinks();
     res.json(result)
 });
+
+
 app.get('/masterLinks', async(req, res, next) => {
     res.render('Links')
+});
+app.get('/login', async(req, res, next) => {
+    res.render('Login')
 });
 
 app.post('/api/addLink', async(req, res, next) => {
@@ -43,11 +49,49 @@ app.post('/api/addLink', async(req, res, next) => {
     res.json(result)
 })
 
+app.post('/api/cadastrarUser', async(req, res, next) => {
+
+    let nome = req.query.nome
+    let email = req.query.email
+    let senha = req.query.senha
+    let getUser = await linksModel.getUser(email);
+    if (getUser.length <= 0) {
+        await bcrypt.hash(senha, 10, function(err, hash) {
+            let result = linksModel.cadUser(nome, email, hash);
+            res.json({ msg: 'Usuário cadastrado com sucesso!' });
+        });
+    } else {
+        res.json({ msg: 'Usuário(a) já cadastrado(a).' })
+    }
+
+});
+
 app.post('/api/deleteLink', async(req, res, next) => {
 
     let id = req.body.id
     let result = await linksModel.delLink(id);
     res.json(result)
+
+})
+app.post('/api/getUser', async(req, res, next) => {
+
+    let email = req.body.email
+    let senha = req.body.senha
+    let dados = await linksModel.getUser(email);
+    if (dados == [] || dados == undefined || dados == 0 || dados == null) {
+        res.json({ status: 3, msg: 'Usuário não cadastrado.' })
+    } else {
+        for (i in dados) {
+            bcrypt.compare(senha, dados[i].senha, function(err, result) {
+                if (result == true) {
+                    res.json({ status: 1 })
+                } else {
+                    res.json({ status: 0, msg: 'Senha incorreta.' })
+                }
+            });
+        }
+    }
+
 
 })
 

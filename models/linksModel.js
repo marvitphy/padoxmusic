@@ -7,6 +7,18 @@ function addLink(obj) {
         .catch(err => err)
 }
 
+function cadUser(nome, email, senha) {
+    return knex('users').insert({ nome: nome, email: email, senha: senha })
+        .then(result => result)
+        .catch(err => err)
+}
+
+function getUser(email) {
+    return knex('users').select().where({ email: email })
+        .then(result => result)
+        .catch(err => err)
+}
+
 function getLinks() {
     return knex('links').orderBy('id', 'desc')
         .then(result => result)
@@ -24,5 +36,7 @@ function delLink(id) {
 module.exports = {
     addLink,
     getLinks,
-    delLink
+    delLink,
+    cadUser,
+    getUser
 }
