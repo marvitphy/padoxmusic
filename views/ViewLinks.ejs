@@ -205,9 +205,12 @@
 `)
                             } else {
 
+                                let result
+                                let result_2 = response.data[i].nome.replace(/\n/g, "PHP");
+
                                 $('.links').append(` <div style="padding-bottom: 30px;  white-space: normal;
    word-wrap: break-word; ">
-                    <button onclick="location.href='${response.data[i].url}'" type="button" class="shake bg-white text-dark btn btn-outline-light" style="width: 80%;  word-break: break-all; white-space: normal;padding-top:10px; padding-bottom:10px; font-size: 12px; font-weight: 600;">${response.data[i].nome}</button>
+                    <button onclick="location.href='${response.data[i].url}'" type="button" class="shake bg-white text-dark btn btn-outline-light" style="width: 80%;  word-break: break-all; white-space: normal;padding-top:10px; padding-bottom:10px; font-size: 12px; font-weight: 600;">${response.data[i].nome.replace('/n', "<br/>")} </button>
                 </div>
 `)
 
