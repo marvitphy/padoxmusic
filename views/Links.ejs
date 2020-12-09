@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard 3</title>
+    <title>ZappaLinks</title>
     <!--css footer zappata-->
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
@@ -30,6 +30,12 @@
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <meta property="og:title" content="Padox - Website">
+    <meta property="og:description" content="Padox Music">
+    <meta property="og:image" content="/assets/moon.png">
+    <meta property="og:url" content="http://padoxmusic.com">
+
+    <link rel="shortcut icon" href="/assets/moon.png" type="image/x-icon">
 
     <!-- Template Main CSS File -->
     <link href="/css/style2.css" rel="stylesheet">
@@ -195,8 +201,8 @@
                     </div>
                 </div>
                 <nav class="navbar navbar-dark d-inline">
-                    <button class="navbar-toggler fundo" style="" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="button">
+                    <button class="navbar-toggler rounded-0 p-2 fundo" style='' type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="button ">
                         
                         <i style="transition: 0.6s;" class="seta fas fa-arrow-circle-up text-white" id="seta"></i>
                          
@@ -220,7 +226,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="title-5 m-b-35">data table</h3>
+                        <h3 class="title-5 m-b-35"><span class="text-muted">ZappaLinks - </span> Seus Links
+                        </h3>
 
                         <div class="table-data__tool-right">
                             <button data-toggle="modal" data-target="#exampleModal" class="au-btn au-btn-icon au-btn--green au-btn--small">
@@ -256,6 +263,9 @@
                                 </div>
                                 <input type="text" class="form-control url" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
+
+
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
@@ -347,6 +357,18 @@
         $('.navbar-toggler').click()
 
         $(document).ready(function() {
+            let clicks
+
+            $('.destacar').one('click', function() {
+
+                alert('1')
+
+                $('.destacar').one('click', function() {
+
+                    alert('2')
+
+                });
+            });
             $('.navbar-toggler').click(function() {
                 $(this).find('i').toggleClass('girar-baixo')
                 $(this).find('i').toggleClass('girar-cima')
@@ -392,7 +414,7 @@
                         <div class="card-header">
                             <span href="" onclick="deletarLink(${response.data[i].id})" class="deletarLink float-right" style="margin-right: 9px ;"><i class="fas fa-trash text-danger"></i></span>
                             <span href="" class="float-right" style="margin-right: 9px ;"><i class="fas fa-pencil-alt  text-success"></i></span>
-                            <span href="" class="float-right" style="margin-right: 9px ;"><i class="fas fa-eye  text-dark "></i></span>
+                            <span href="" class="float-right" style="margin-right: 9px ;"></i></span>
                         </div>
                         <div class="card-body">
                             <div class=" mb-0">
@@ -420,9 +442,16 @@
 
 
             window.addLink = function(nome, url) {
+                let d
+                if (clicks == 'undefined' || clicks == false) {
+                    d = 0
+                } else {
+                    d = 1
+                }
                 axios.post('/api/addLink', {
                         nome: nome,
-                        url: url
+                        url: url,
+                        destaque: d
                     })
                     .then(function(response) {
 
