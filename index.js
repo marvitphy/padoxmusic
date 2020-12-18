@@ -6,8 +6,6 @@ const sharp = require('sharp');
 const linksModel = require('./models/linksModel')
 const bcrypt = require('bcrypt');
 
-
-
 var port = Number(process.env.PORT || 5000);
 
 app.use(bodyparser.urlencoded({ extended: false }))
@@ -19,15 +17,15 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.get('/', function(req, res) {
-    res.render('404')
+    res.render('Dash')
 })
 app.get('/links', function(req, res) {
     res.render('ViewLinks')
 })
 
-sharp('./public/assets/fotofoto.jpg')
-    .resize(1116, 774)
-    .toFile('5.jpg', (err, info) => {});
+// sharp('./public/assets/fotofoto.jpg')
+//     .resize(1116, 774)
+//     .toFile('5.jpg', (err, info) => {});
 
 
 app.get('/api/getLinks', async(req, res, next) => {

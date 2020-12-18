@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: table;
+            background: linear-gradient(-45deg, #49087e, #120125, #801669, hsl(0, 78%, 23%));
+            background-size: 400% 400%;
+            -webkit-animation: Gradient 15s ease infinite;
+            -moz-animation: Gradient 15s ease infinite;
+            animation: Gradient 15s ease infinite;
+        }
+        
+        @font-face {
+            font-family: 'Bebas Neue', cursive;
+            src: url(https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap);
+        }
+        
+        .container {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+            padding: 0px;
+        }
+        
+        .neon {
+            font-family: 'Bebas Neue';
+            color: #FB4264;
+            font-size: 4.5vw;
+            text-shadow: 0 0 3vw #F40A35;
+        }
+        
+        .flux {
+            font-family: 'Bebas Neue';
+            color: #426DFB;
+            font-size: 9vw;
+            line-height: 10vw;
+            text-shadow: 0 0 3vw #2356FF;
+        }
+        
+        .neon {
+            animation: neon 1s ease infinite;
+            -moz-animation: neon 1s ease infinite;
+            -webkit-animation: neon 1s ease infinite;
+        }
+        
+        @keyframes neon {
+            0%,
+            100% {
+                text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+                color: #FED128;
+            }
+            50% {
+                text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+                color: #806914;
+            }
+        }
+        
+        .flux {
+            animation: flux 2s linear infinite;
+            -moz-animation: flux 2s linear infinite;
+            -webkit-animation: flux 2s linear infinite;
+            -o-animation: flux 2s linear infinite;
+        }
+        
+        .icons {
+            font-size: 25px;
+            color: white;
+            margin-right: 38px;
+        }
+        
+        @keyframes flux {
+            0%,
+            100% {
+                text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+                color: #28D7FE;
+            }
+            50% {
+                text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+                color: #146C80;
+            }
+        }
+        
+        .floating {
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            margin-left: 30px;
+            margin-top: 5px;
+        }
+        
+        @keyframes floating {
+            0% {
+                transform: translate(0, 0px);
+            }
+            50% {
+                transform: translate(0, 15px);
+            }
+            100% {
+                transform: translate(0, -0px);
+            }
+        }
+        
+        .title {
+            font-weight: bold;
+            font-size: 25px;
+            color: white;
+            letter-spacing: 3px;
+        }
+        
+        .c2 {
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            padding-top: 15%;
+        }
+        
+        .icons-box {
+            transform: translateX(-12px);
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .neon {
+                font-size: 40px;
+            }
+            .flux {
+                font-size: 60px;
+                line-height: 60px;
+                margin-top: 15px;
+            }
+            .title {
+                margin-left: 0;
+                font-size: 13px;
+                transform: translateY(-10px);
+                font-weight: 800;
+                letter-spacing: 0px;
+            }
+            .icons {
+                margin-top: 20px;
+                margin-right: 10px;
+            }
+            .c2 {
+                padding-top: 55%;
+            }
+            .icons-box {
+                transform: translate(-12px, -12px);
+            }
+        }
+        
+        @-webkit-keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+        
+        @-moz-keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+        
+        @keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+    </style>
+    <title>Title</title>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container" style="overflow: hidden; ">
+
+
+        <span class="floating title" style="">Vintage Culture, Shapeless & PΛDOX</span>
+        <div class="flux">Show Me The Way</div>
+        <div class="neon">Out Now</div>
+        <div class="icons-box" style="">
+            <i class="fab fa-spotify icons"></i> <i class="fab fa-deezer icons"></i> <span class="iconify icons" style="position: absolute; " data-icon="jam-beatport" data-inline="false"></span>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
