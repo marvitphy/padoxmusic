@@ -33,6 +33,7 @@
     <meta property="twitter:image" content="/assets/5.jpg">
 
 
+
     <meta property="og:url" content="https://padoxmusic.com">
     <meta property="og:site_name" content="Padox">
     <meta property="og:type" content="website" />
@@ -178,7 +179,7 @@
         }
         
         .icons:hover {
-            font-size: 36px;
+            font-size: 30px;
             text-shadow: 2px 2px 25px;
         }
         
@@ -258,16 +259,25 @@
         <div class="flux">Show Me The Way</div>
         <div class="neon">Out Now</div>
         <div class="icons-box" style="">
-            <a target="_blank" href="https://open.spotify.com/album/1QuxbTQSanM8qJOVmQTfYD"><i href=""  class="fab fa-spotify icons"></i></a>
-            <a href="https://deezer.page.link/DrVuwKpm3QtSbbxv8"><i class="fab fa-deezer icons"></i></a>
-            <a href="https://music.apple.com/br/album/show-me-the-way-feat-fm-laeti/1543262134?i=1543262257"><i class="icons fab fa-apple"></i></a>
+            <a target="_blank" data-toggle="tooltip" data-placement="left" title="Spotify" href="https://open.spotify.com/album/1QuxbTQSanM8qJOVmQTfYD"><i href=""  class="fab fa-spotify icons"></i></a>
+            <a data-toggle="tooltip" data-placement="left" title="Deezer" href="https://deezer.page.link/DrVuwKpm3QtSbbxv8"><i class="fab fa-deezer icons"></i></a>
+            <a data-toggle="tooltip" data-placement="left" title="Apple Music" href="https://music.apple.com/br/album/show-me-the-way-feat-fm-laeti/1543262134?i=1543262257"><i class="icons fab fa-apple"></i></a>
+            <a href="" data-toggle="tooltip" data-placement="left" title="Beatport">
+                <span class="iconify icons" style="position: absolute; " data-icon="jam-beatport"></span>
+            </a>
 
-            <span class="iconify icons" style="position: absolute; " data-icon="jam-beatport" data-inline="false"></span>
         </div>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        })
+    </script>
 </body>
 
 </html>
