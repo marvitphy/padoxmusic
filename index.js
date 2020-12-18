@@ -22,6 +22,9 @@ app.get('/', function(req, res) {
 app.get('/links', function(req, res) {
     res.render('ViewLinks')
 })
+app.get('/show-me-the-way', function(req, res) {
+    res.render('ViewLinks')
+})
 
 // sharp('./public/assets/fotofoto.jpg')
 //     .resize(1116, 774)
