@@ -1,10 +1,10 @@
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-        host: process.env.DB_HOST || 'sql204.main-hosting.eu',
-        user: process.env.DB_USER || 'u126436471_padox',
-        password: process.env.DB_PASS || 'Padox123',
-        database: 'u126436471_padox'
+        host: process.env.DB_HOST || 'us-cdbr-east-02.cleardb.com',
+        user: process.env.DB_USER || 'bf53ed4da4bbc8',
+        password: process.env.DB_PASS || 'b22de708',
+        database: 'heroku_bd97f90f7a70ef6'
     },
     pool: { min: 0, max: 10 },
 });
